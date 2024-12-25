@@ -1,11 +1,13 @@
 import React from "react";
 import HomeHeroView from "../home-hero-view";
+import HomeProjectsView from "../home-projects-view";
 
 const HomePageView = () => {
   return (
-    <div>
+    <main className="main">
       <HomeHeroView />
-    </div>
+      <HomeProjectsView />
+    </main>
   );
 };
 
