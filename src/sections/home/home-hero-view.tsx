@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React from "react";
+import homeProfile from "../../../public/assets/img/home-perfil.png";
+import Image from "next/image";
 
 const HomeHeroView = () => {
   return (
@@ -9,10 +11,12 @@ const HomeHeroView = () => {
         <div className="home__container container grid">
           {/* profile */}
           <div className="profile">
-            <img
-              src="assets/img/home-profil.png"
+            <Image
+              src={homeProfile}
               alt=""
               className="profile__img"
+              height={500}
+              width={500}
             />
             <div className="profile__data">
               <h1 className="profile__name">
@@ -28,6 +32,30 @@ const HomeHeroView = () => {
                 </Link>
               </div>
             </div>
+          </div>
+
+          {/* info */}
+
+          <div className="info">
+            <div className="info__data">
+              <div className="info__circle"></div>
+              <h1 className="info__name">Jayed Khan</h1>
+            </div>
+            <div className="info__image">
+              <img
+                src="assets/img/about-prefil.on"
+                alt=""
+                className="info__img"
+              />
+            </div>
+            <p className="info__description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+              eos?
+            </p>
+
+            <Link href="#" target="_blank" className="button button__black">
+              Download Cv
+            </Link>
           </div>
         </div>
       </section>
