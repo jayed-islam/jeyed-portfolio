@@ -13,7 +13,7 @@ const NavSection = () => {
     <nav className="nav">
       <ul className="nav__list">
         <li>
-          <Link href="#home" className="nav__link" title="Home">
+          <Link href="#home" className="nav__link active-link" title="Home">
             <RiHomeLine />
           </Link>
         </li>

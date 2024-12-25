@@ -13,12 +13,12 @@ const HomeProjectsView = () => {
             <img
               src="assets/img/projects-1.jpg"
               alt=""
-              className="projects__img"
+              className="projects__img w-full"
             />
           </Link>
 
           <div className="projects__data">
-            <h3 className="projects__name"></h3>
+            <h3 className="projects__name">Projxt title</h3>
             <p className="projects__description">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
               tenetur officiis beatae dolore natus odit illum nihil eligendi
