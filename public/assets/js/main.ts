@@ -2,6 +2,13 @@
 
 /*=============== SHOW SCROLL UP ===============*/
 
+const scrollup = () => {
+  const scrollUp = document.getElementById("scroll-up");
+  this.scrollY >= 351
+    ? scrollUp?.classList.add("show-scroll")
+    : scrollUp?.classList.remove("show-scroll");
+};
+window.addEventListener("scroll", scrollup);
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
 const sections = document.querySelectorAll("section[id]");

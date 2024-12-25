@@ -28,9 +28,7 @@ export default function RootLayout({
     <html lang="en" className={roboto_condensed.className}>
       <body>
         <ReduxProvider>
-          {/* <MainLayout> */}
-          {children}
-          {/* </MainLayout> */}
+          <MainLayout>{children}</MainLayout>
         </ReduxProvider>
       </body>
     </html>
