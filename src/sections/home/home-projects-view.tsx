@@ -5,7 +5,7 @@ import React from "react";
 const HomeProjectsView = () => {
   return (
     <section className="projects section" id="projects">
-      <h2 className="section__title">RECENT PROJECT</h2>
+      <h2 className="section__title">RECENT PROJECTS</h2>
 
       <div className="projects__container container grid">
         <article className="projects__card">

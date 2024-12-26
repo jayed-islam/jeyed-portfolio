@@ -5,7 +5,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer__container grid">
+      <div className="footer__container container grid">
         <div className="footer__content grid">
           <Link href="/" className="footer__logo">
             Jayed

@@ -2,9 +2,9 @@ import React from "react";
 
 const HomeExperienceView = () => {
   return (
-    <section className="experience section" id="experience">
-      <h2 className="section__title">eXPERIENCE OR WORK</h2>
-      <div className="experience__container container grid">
+    <section className="experience section " id="experience">
+      <h2 className="section__title">EXPERIENCE OR WORK</h2>
+      <div className="experience__container container grid ">
         <article className="experience__card">
           <h2 className="experience__company">experince company</h2>
           <div className="experience__data">

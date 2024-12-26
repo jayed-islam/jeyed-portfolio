@@ -87,7 +87,7 @@ const HomeContactView = () => {
           </button>
 
           <p className="contact__message" id="contact-message">
-            Message
+            {stateMessage}
           </p>
         </form>
       </div>

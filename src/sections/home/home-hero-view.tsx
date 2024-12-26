@@ -23,7 +23,7 @@ const HomeHeroView = () => {
           />
           <div className="profile__data">
             <h1 className="profile__name">
-              name <br /> Gallers
+              Jayed <br /> Khan
             </h1>
 
             <div className="profile__buttons">
@@ -53,6 +53,9 @@ const HomeHeroView = () => {
           </div>
           <p className="info__description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, eos?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
+            officiis! Officia velit, magni autem eos in aliquam deserunt ut.
+            Natus.
           </p>
 
           <Link href="#" target="_blank" className="button button__black">
