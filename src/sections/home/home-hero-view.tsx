@@ -1,12 +1,9 @@
 import Link from "next/link";
 import React from "react";
 import homeProfile from "../../../public/assets/img/home-perfil.png";
+import aboutProfile from "../../../public/assets/img/about-perfil.png";
 import Image from "next/image";
-import {
-  RiGithubLine,
-  RiLinkedinBoxLine,
-  RiTwitterLine,
-} from "@remixicon/react";
+import { skills, socialLinks } from "@/constants";
 
 const HomeHeroView = () => {
   return (
@@ -45,17 +42,17 @@ const HomeHeroView = () => {
             <h1 className="info__name">Jayed Khan</h1>
           </div>
           <div className="info__image">
-            <img
-              src="assets/img/about-perfil.png"
+            <Image
+              src={aboutProfile}
               alt=""
               className="info__img"
+              height={500}
+              width={500}
             />
           </div>
           <p className="info__description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, eos?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
-            officiis! Officia velit, magni autem eos in aliquam deserunt ut.
-            Natus.
+            Passionate about creating and designing websites with the best
+            engaging interfaces.
           </p>
 
           <Link href="#" target="_blank" className="button button__black">
@@ -65,38 +62,41 @@ const HomeHeroView = () => {
 
         {/* about */}
         <div className="about">
-          <h3 className="about__name">Lorem, ipsum dolor. Web Developer</h3>
+          <h3 className="about__name">
+            Jayed Khan - <b>Full-Stack Developer & Flutter Developer</b>
+          </h3>
           <p className="about__description">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Dignissimos ipsam autem at. Odit commodi velit aliquid, nulla dolor
-            illum. Provident aut molestias nisi officia ipsam dignissimos eos
-            quia ipsa.
+            Located in Dhaka, Bangladesh, I have several years of experience in
+            web development and flutter development, carrying out several
+            successful projects.
           </p>
 
           <div className="about__social">
-            <Link href="*" target="_blank" className="about__link">
-              <RiLinkedinBoxLine />
-            </Link>
-            <Link href="*" target="_blank" className="about__link">
-              <RiGithubLine />
-            </Link>
-            <Link href="*" target="_blank" className="about__link">
-              <RiTwitterLine />
-            </Link>
+            {socialLinks.map((link, index) => (
+              <Link
+                href={link.href}
+                target="_blank"
+                key={index}
+                className="about__link"
+              >
+                {link.icon}
+              </Link>
+            ))}
           </div>
 
           <div className="about__image">
-            <img
-              src="assets/img/about-perfil.png"
+            <Image
+              src={aboutProfile}
               alt=""
               className="about__img"
+              height={500}
+              width={500}
             />
           </div>
 
           <p className="about__note">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
-            assumenda exercitationem! Ab voluptates ratione, voluptatibus sunt
-            reiciendis minus fugiat.
+            He doesn&apos;t write messages on social networks, send me an email
+            and I&apos;ll answer you, In-Sha-Allah.
           </p>
 
           <Link className="button" href="#contact">
@@ -104,56 +104,34 @@ const HomeHeroView = () => {
           </Link>
         </div>
 
-        {/* slikks */}
+        {/* skills */}
 
         <div className="skills">
           <h2 className="skills__title">Skills</h2>
           <div className="skills__items">
-            <img
-              src="assets/img/skills-html.svg"
-              alt=""
-              className="skills__item"
-            />
-            <img
-              src="assets/img/skills-css.svg"
-              alt=""
-              className="skills__item"
-            />
-            <img
-              src="assets/img/skills-git.svg"
-              alt=""
-              className="skills__item"
-            />
-            <img
-              src="assets/img/skills-github.svg"
-              alt=""
-              className="skills__item"
-            />
-            <img
-              src="assets/img/skills-javascript.svg"
-              alt=""
-              className="skills__item"
-            />
-            <img
-              src="assets/img/skills-photoshop.svg"
-              alt=""
-              className="skills__item"
-            />
-            <img
-              src="assets/img/skills-react.svg"
-              alt=""
-              className="skills__item"
-            />
-            <img
-              src="assets/img/skills-tailwind-css.svg"
-              alt=""
-              className="skills__item"
-            />
+            {skills.map((skill, index) => (
+              <div
+                key={index}
+                className={`skills__item ${
+                  skill.alt === "Next.js" || skill.alt === "Prisma"
+                    ? "bg-white p-[2px] rounded-sm"
+                    : ""
+                }`}
+              >
+                <Image
+                  src={skill.src}
+                  alt={skill.alt}
+                  className="skills__image"
+                  height={500}
+                  width={500}
+                />
+              </div>
+            ))}
           </div>
 
           <p className="skills__description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum,
-            maiores?
+            Visit the projects section to see the work done with these web
+            technologies.
           </p>
         </div>
       </div>

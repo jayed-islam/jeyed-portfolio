@@ -1,4 +1,4 @@
-import { RiGithubLine, RiLinkedinLine, RiTwitterLine } from "@remixicon/react";
+import { socialLinks } from "@/constants";
 import Link from "next/link";
 import React from "react";
 
@@ -31,15 +31,16 @@ const Footer = () => {
         </div>
 
         <div className="footer__social">
-          <Link href="" target="_blank" className="footer__social-link">
-            <RiLinkedinLine />
-          </Link>
-          <Link href="" target="_blank" className="footer__social-link">
-            <RiGithubLine />
-          </Link>
-          <Link href="" target="_blank" className="footer__social-link">
-            <RiTwitterLine />
-          </Link>
+          {socialLinks.map((link, index) => (
+            <Link
+              href={link.href}
+              target="_blank"
+              key={index}
+              className="footer__social-link"
+            >
+              {link.icon}
+            </Link>
+          ))}
         </div>
       </div>
 
