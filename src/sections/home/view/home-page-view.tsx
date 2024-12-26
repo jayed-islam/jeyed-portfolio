@@ -4,6 +4,7 @@ import HomeProjectsView from "../home-projects-view";
 import HomeServicesView from "../home-services-view";
 import HomeExperienceView from "../home-experience-view";
 import HomeContactView from "../home-contact-view";
+import HomeBlogView from "../home-blog-view";
 
 const HomePageView = () => {
   return (
@@ -13,6 +14,7 @@ const HomePageView = () => {
       <HomeServicesView />
       <HomeExperienceView />
       <HomeContactView />
+      <HomeBlogView />
     </main>
   );
 };

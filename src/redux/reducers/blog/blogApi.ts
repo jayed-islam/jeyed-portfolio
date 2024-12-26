@@ -5,9 +5,9 @@ import { IBlog } from "@/types/blog";
 import { IPagination } from "@/types/projects";
 
 export type IBlogListFilterOptions = {
-  searchTerm: string;
-  page: number;
-  limit: number;
+  searchTerm?: string;
+  page?: number;
+  limit?: number;
 };
 
 interface IGetAllBlogResponse {

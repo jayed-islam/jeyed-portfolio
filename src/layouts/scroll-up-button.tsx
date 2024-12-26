@@ -8,14 +8,14 @@ const ScrollUpButton: React.FC = () => {
     const scrollUpButton = document.getElementById("scroll-up");
 
     const handleScroll = () => {
-      if (window.scrollY >= 351) {
+      if (window?.scrollY >= 351) {
         scrollUpButton?.classList.add("show-scroll");
       } else {
         scrollUpButton?.classList.remove("show-scroll");
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window?.addEventListener("scroll", handleScroll);
 
     // Cleanup on unmount
     return () => {

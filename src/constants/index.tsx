@@ -51,6 +51,13 @@ export const skills = [
   //   { src: github, alt: "GitHub" },
 ];
 
+export const getSkillImage = (techName: string): string => {
+  const skill = skills.find(
+    (s) => s.alt.toLowerCase() === techName.toLowerCase()
+  );
+  return skill ? skill.src : ts.src; // Fallback image
+};
+
 export const services = [
   {
     icon: <RiCodeBoxLine />,

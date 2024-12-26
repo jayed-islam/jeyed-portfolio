@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { api } from "@/redux/api";
-import { IExperience } from "@/types/esp";
+import { IExperience } from "@/types/exp";
 import { IPagination } from "@/types/projects";
 
 export type IExperienceListFilterOptions = {
-  searchTerm: string;
-  page: number;
-  limit: number;
+  searchTerm?: string;
+  page?: number;
+  limit?: number;
 };
 
 interface IGetAllExperiencesResponse {

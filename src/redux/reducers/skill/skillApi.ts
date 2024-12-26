@@ -5,9 +5,9 @@ import { ISkill } from "@/types/skill";
 import { IPagination } from "@/types/projects";
 
 export type ISkillListFilterOptions = {
-  searchTerm: string;
-  page: number;
-  limit: number;
+  searchTerm?: string;
+  page?: number;
+  limit?: number;
 };
 
 interface IGetAllSkillsResponse {

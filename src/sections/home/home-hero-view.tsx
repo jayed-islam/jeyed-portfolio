@@ -1,11 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 import homeProfile from "../../../public/assets/img/home-perfil.png";
 import aboutProfile from "../../../public/assets/img/about-perfil.png";
 import Image from "next/image";
-import { skills, socialLinks } from "@/constants";
+import { socialLinks } from "@/constants";
+import { useGetSkillsQuery } from "@/redux/reducers/skill/skillApi";
 
 const HomeHeroView = () => {
+  const { data, isFetching } = useGetSkillsQuery({ searchTerm: "" });
   return (
     <section className="home section" id="home">
       <div className="home__container container grid">
@@ -109,7 +113,7 @@ const HomeHeroView = () => {
         <div className="skills">
           <h2 className="skills__title">Skills</h2>
           <div className="skills__items">
-            {skills.map((skill, index) => (
+            {/* {skills.map((skill, index) => (
               <div
                 key={index}
                 className={`skills__item ${
@@ -126,7 +130,34 @@ const HomeHeroView = () => {
                   width={500}
                 />
               </div>
-            ))}
+            ))} */}
+            {isFetching
+              ? Array.from({ length: 6 }).map((_, index) => (
+                  <div
+                    key={index}
+                    className="skills__item shimmer bg-gray-300 h-16 w-16 rounded animate-pulse"
+                  ></div>
+                ))
+              : data &&
+                data?.data?.skills?.map((skill, index) => (
+                  <div
+                    key={index}
+                    // className={`skills__item ${
+                    //   skill.alt === "Next.js" || skill.alt === "Prisma"
+                    //     ? "bg-white p-[2px] rounded-sm"
+                    //     : ""
+                    // }`}
+                    className="skills__item"
+                  >
+                    <Image
+                      src={skill.logo}
+                      alt={skill.name}
+                      className="skills__image"
+                      height={500}
+                      width={500}
+                    />
+                  </div>
+                ))}
           </div>
 
           <p className="skills__description">
