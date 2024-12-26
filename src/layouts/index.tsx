@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import NavSection from "./header";
 import ScrollUpButton from "./scroll-up-button";
+import Footer from "./footer";
 
 interface Props {
   children: ReactNode;
@@ -9,8 +10,9 @@ interface Props {
 const MainLayout = ({ children }: Props) => {
   return (
     <div>
-      {/* <NavSection /> */}
+      <NavSection />
       {children}
+      <Footer />
       <ScrollUpButton />
     </div>
   );
