@@ -9,7 +9,7 @@ interface Props {
 const MainLayout = ({ children }: Props) => {
   return (
     <div>
-      <NavSection />
+      {/* <NavSection /> */}
       {children}
       <ScrollUpButton />
     </div>
