@@ -10,7 +10,9 @@ const HomeServicesView = () => {
         <article className="services__card">
           <div className="services__icon">
             <div className="services__circle"></div>
-            <RiCodeBoxLine className="icon" />
+            <span className="icon">
+              <RiCodeBoxLine />
+            </span>
           </div>
 
           <h3 className="services__name">my services name</h3>

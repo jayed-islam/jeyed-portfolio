@@ -4,6 +4,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import useScrollReveal from "@/hooks/use-scroll-revel";
 
 const HomeContactView = () => {
   const contactForm = document.getElementById("contact-form");
