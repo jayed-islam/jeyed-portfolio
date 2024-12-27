@@ -1,10 +1,12 @@
 "use client";
 
 import React, { ReactNode } from "react";
-import NavSection from "./header";
 import ScrollUpButton from "./scroll-up-button";
 import Footer from "./footer";
 import useScrollReveal from "@/hooks/use-scroll-revel";
+import dynamic from "next/dynamic";
+
+const NavSection = dynamic(() => import("./header"), { ssr: false });
 
 interface Props {
   children: ReactNode;

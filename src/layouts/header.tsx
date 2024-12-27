@@ -8,6 +8,8 @@ import {
   RiFileEditLine,
   RiHonourLine,
   RiSendPlaneLine,
+  RiBloggerLine,
+  RiGraduationCapLine,
 } from "@remixicon/react";
 import { usePathname } from "next/navigation";
 
@@ -16,27 +18,54 @@ const NavSection: React.FC = () => {
 
   const pathname = usePathname();
 
+  // const scrollActive = useCallback(() => {
+  //   const scrollDown = window?.scrollY;
+
+  //   if (!sectionsRef.current) {
+  //     sectionsRef.current = document?.querySelectorAll("section[id]");
+  //   }
+
+  //   sectionsRef.current.forEach((current) => {
+  //     const sectionHeight = current.offsetHeight;
+  //     const sectionTop = current.offsetTop - 58;
+  //     const sectionId = current.getAttribute("id");
+  //     const sectionLink = document.querySelector<HTMLAnchorElement>(
+  //       `.nav__list a[href*="${sectionId}"]`
+  //     );
+
+  //     if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+  //       sectionLink?.classList.add("active-link");
+  //     } else {
+  //       sectionLink?.classList.remove("active-link");
+  //     }
+  //   });
+  // }, []);
   const scrollActive = useCallback(() => {
-    const scrollDown = window?.scrollY;
+    if (typeof window !== "undefined") {
+      const scrollDown = window.scrollY;
 
-    if (!sectionsRef.current) {
-      sectionsRef.current = document?.querySelectorAll("section[id]");
-    }
-
-    sectionsRef.current.forEach((current) => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 58;
-      const sectionId = current.getAttribute("id");
-      const sectionLink = document.querySelector<HTMLAnchorElement>(
-        `.nav__list a[href*="${sectionId}"]`
-      );
-
-      if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
-        sectionLink?.classList.add("active-link");
-      } else {
-        sectionLink?.classList.remove("active-link");
+      if (!sectionsRef.current) {
+        sectionsRef.current = document.querySelectorAll("section[id]");
       }
-    });
+
+      sectionsRef.current.forEach((current) => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 58;
+        const sectionId = current.getAttribute("id");
+        const sectionLink = document.querySelector<HTMLAnchorElement>(
+          `.nav__list a[href*="${sectionId}"]`
+        );
+
+        if (
+          scrollDown > sectionTop &&
+          scrollDown <= sectionTop + sectionHeight
+        ) {
+          sectionLink?.classList.add("active-link");
+        } else {
+          sectionLink?.classList.remove("active-link");
+        }
+      });
+    }
   }, []);
 
   useEffect(() => {
@@ -72,6 +101,16 @@ const NavSection: React.FC = () => {
           <li>
             <Link href="#experience" className="nav__link" title="Experience">
               <RiHonourLine />
+            </Link>
+          </li>
+          <li className="hidden xl:flex">
+            <Link href="#blogs" className="nav__link" title="Blogs">
+              <RiBloggerLine />
+            </Link>
+          </li>
+          <li className="hidden xl:flex">
+            <Link href="#educations" className="nav__link" title="Educations">
+              <RiGraduationCapLine />
             </Link>
           </li>
           <li>

@@ -1,5 +1,7 @@
-import MainLayout from "@/layouts";
 import React, { ReactNode } from "react";
+import dynamic from "next/dynamic";
+
+const MainLayout = dynamic(() => import("@/layouts"), { ssr: false });
 
 interface Props {
   children: ReactNode;

@@ -5,6 +5,7 @@ import HomeServicesView from "../home-services-view";
 import HomeExperienceView from "../home-experience-view";
 import HomeContactView from "../home-contact-view";
 import HomeBlogView from "../home-blog-view";
+import EducationSection from "../home-education-view";
 
 const HomePageView = () => {
   return (
@@ -14,6 +15,7 @@ const HomePageView = () => {
       <HomeServicesView />
       <HomeExperienceView />
       <HomeBlogView />
+      <EducationSection />
       <HomeContactView />
     </main>
   );

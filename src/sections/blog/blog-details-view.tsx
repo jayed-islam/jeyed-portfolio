@@ -2,7 +2,6 @@
 
 import { useGetBlogByIdQuery } from "@/redux/reducers/blog/blogApi";
 import { IBlog } from "@/types/blog";
-import Image from "next/image";
 import React from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -12,7 +11,7 @@ interface Props {
 }
 
 const BlogDetailsView = ({ id }: Props) => {
-  const { data, isLoading, isError } = useGetBlogByIdQuery(id);
+  const { data, isFetching, isError } = useGetBlogByIdQuery(id);
 
   const project = data?.data as IBlog | undefined;
   const { title, description, content, banner, createdAt } = project || {};
@@ -23,10 +22,12 @@ const BlogDetailsView = ({ id }: Props) => {
       : "N/A";
   };
 
-  if (isLoading) {
+  if (isFetching) {
     return (
-      <div className="flex justify-center items-center h-80">
-        <p className="section__title">Loading blog details...</p>
+      <div className="flex justify-center items-center h-80 p-20">
+        <div className="text-center bg-gray-800 p-11 rounded-3xl">
+          <p className="text-3xl">Loading blog details...</p>
+        </div>
       </div>
     );
   }
@@ -48,12 +49,10 @@ const BlogDetailsView = ({ id }: Props) => {
 
         <div className="flex flex-col gap-9">
           <div className="h-60 md:h-80 lg:h-96 w-full border">
-            <Image
+            <img
               src={banner || "/placeholder.png"}
               alt={title || "Project Image"}
               className="rounded-lg shadow-md w-full h-full object-contain"
-              height={600}
-              width={800}
             />
           </div>
 

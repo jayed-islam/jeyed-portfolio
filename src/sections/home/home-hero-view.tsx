@@ -11,23 +11,6 @@ import { useGetSkillsQuery } from "@/redux/reducers/skill/skillApi";
 const HomeHeroView = () => {
   const { data, isFetching } = useGetSkillsQuery({ searchTerm: "" });
 
-  // const handleDownload = () => {
-  //   // Trigger download directly from Google Drive
-  //   const downloadLink = document.createElement("a");
-  //   downloadLink.href =
-  //     "https://drive.google.com/uc?export=download&id=12Q9pRCWHQ5CeKTF9a14VAI8DJmZQXLAi";
-  //   downloadLink.download = "Resume.pdf"; // Optional: set the file name for download
-  //   document.body.appendChild(downloadLink);
-  //   downloadLink.click();
-  //   document.body.removeChild(downloadLink);
-
-  //   // Open the Google Drive view link in a new tab
-  //   window.open(
-  //     "https://drive.google.com/file/d/12Q9pRCWHQ5CeKTF9a14VAI8DJmZQXLAi/view?usp=sharing",
-  //     "_blank"
-  //   );
-  // };
-
   const handleDownload = () => {
     // Open the Google Drive view link in a new tab first
     window.open(

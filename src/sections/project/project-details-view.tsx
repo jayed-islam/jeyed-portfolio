@@ -44,8 +44,10 @@ const ProjectDetailsView = ({ id }: Props) => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-80">
-        <p className="section__title">Loading project details...</p>
+      <div className="flex justify-center items-center h-80 p-20">
+        <div className="text-center bg-gray-800 p-11 rounded-3xl">
+          <p className="text-3xl">Loading project details...</p>
+        </div>
       </div>
     );
   }

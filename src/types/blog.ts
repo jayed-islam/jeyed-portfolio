@@ -9,4 +9,5 @@ export interface IBlog {
   tags: string[];
   isPublished: boolean;
   isDeleted: boolean;
+  createdAt: string;
 }
