@@ -37,7 +37,7 @@ const defaultOptions = {
   origin: "top",
   distance: "60px",
   duration: 2500,
-  delay: 400,
+  delay: 100,
 };
 
 type ScrollRevealOptions = Parameters<typeof ScrollReveal>[0];

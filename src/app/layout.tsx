@@ -2,6 +2,7 @@ import "./globals.css";
 import { Montserrat_Alternates, Grechen_Fuemen } from "next/font/google";
 import { ReduxProvider } from "@/redux/ReduxProvider";
 import { Metadata } from "next";
+import favicon from "../../public/favicon.png";
 
 const montserrat_alternates = Montserrat_Alternates({
   weight: ["400", "700", "500", "600"],
@@ -16,8 +17,12 @@ const grechen_fuemen = Grechen_Fuemen({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio of Jayed",
+  title: "Jayeds Portfolio",
   description: "Jayed's",
+  icons: {
+    icon: favicon.src,
+    apple: "favicon.src",
+  },
 };
 
 export default function RootLayout({
