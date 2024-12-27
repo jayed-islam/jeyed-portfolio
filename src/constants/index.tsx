@@ -23,7 +23,8 @@ import tailwind from "../../public/assets/img/skills-tailwind-css.svg";
 import flutter from "../../public/assets/img/flutter.svg";
 import mui from "../../public/assets/img/material-ui-1.svg";
 import mongodb from "../../public/assets/img/mongodb-icon-1-1.svg";
-import nextjs from "../../public/assets/img/nextjs-13.svg";
+import nextLogo from "../../public/assets/img/nextjs-0.png";
+import expressLogo from "../../public/assets/img/expressjs.png";
 import nodejs from "../../public/assets/img/nodejs-1.svg";
 import prisma from "../../public/assets/img/prisma-3.svg";
 import redux from "../../public/assets/img/redux.svg";
@@ -34,7 +35,7 @@ export const skills = [
   //   { src: css, alt: "CSS" },
   { src: ts, alt: "TypeScript" },
   { src: react, alt: "React" },
-  { src: nextjs, alt: "Next.js" },
+  { src: nextLogo, alt: "Next.js" },
   { src: tailwind, alt: "Tailwind CSS" },
   { src: mui, alt: "Material-UI" },
   { src: flutter, alt: "Flutter" },
@@ -54,7 +55,7 @@ export const skills = [
 export const skillsMatcher = [
   { src: ts, alt: "TypeScript" },
   { src: react, alt: "React" },
-  { src: git, alt: "Nextjs" },
+  { src: nextLogo, alt: "Nextjs" },
   { src: tailwind, alt: "Tailwind CSS" },
   { src: mui, alt: "Material-UI" },
   { src: flutter, alt: "Flutter" },
@@ -66,6 +67,7 @@ export const skillsMatcher = [
   { src: github, alt: "GitHub" },
   { src: html, alt: "HTML" },
   { src: css, alt: "CSS" },
+  { src: expressLogo, alt: "Express" },
 ];
 export const getSkillImage = (techName: string): string => {
   const skill = skillsMatcher.find(

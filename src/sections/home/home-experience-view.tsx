@@ -65,13 +65,26 @@ const HomeExperienceView = () => {
                 <h2 className="experience__company">{experience.company}</h2>
                 <div className="experience__data">
                   <h3 className="experience__profession">{experience.title}</h3>
+                  <h3 className="text-sm font-normal mb-4">
+                    at - {experience.company}
+                  </h3>
                   <span className="experience__date">
                     {" "}
-                    {format(new Date(experience.startDate), "MM/dd/yyyy")}
+                    {format(
+                      new Date(experience.startDate),
+                      "MM/dd/yyyy"
+                    )} to{" "}
+                    {experience.endDate
+                      ? new Date(experience.endDate).toLocaleDateString()
+                      : "Present"}
                   </span>
-                  <p className="experience__description">
-                    {experience.description}
-                  </p>
+                  <div className="flex flex-col gap-3">
+                    {experience?.activities?.map((item, idx) => (
+                      <li key={idx} className="experience__description">
+                        {item}
+                      </li>
+                    ))}
+                  </div>
                 </div>
               </article>
             ))}

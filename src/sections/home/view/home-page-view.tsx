@@ -13,8 +13,8 @@ const HomePageView = () => {
       <HomeProjectsView />
       <HomeServicesView />
       <HomeExperienceView />
-      <HomeContactView />
       <HomeBlogView />
+      <HomeContactView />
     </main>
   );
 };

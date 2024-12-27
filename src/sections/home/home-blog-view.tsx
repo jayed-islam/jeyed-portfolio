@@ -54,11 +54,13 @@ const HomeBlogView = () => {
 
                 <div className="projects__data">
                   <h3 className="projects__name">{blog.title}</h3>
-                  <p className="projects__description">{blog.description}</p>
+                  <p className="projects__description line-clamp-5 overflow-ellipsis">
+                    {blog.description}
+                  </p>
 
                   <Link href={`/blog/${blog._id}`} className="projects__button">
                     <RiLink />
-                    <span>Visit Blog</span>
+                    <span>Visit Details</span>
                   </Link>
                 </div>
               </article>
