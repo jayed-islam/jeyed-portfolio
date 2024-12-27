@@ -111,7 +111,7 @@ export const services = [
 
 export const socialLinks = [
   {
-    href: "https://www.linkedin.com/jayedulislam",
+    href: "https://www.linkedin.com/in/jayedulislam",
     icon: <RiLinkedinBoxLine />,
     alt: "LinkedIn",
   },
