@@ -135,19 +135,19 @@ const HomeHeroView = () => {
               ? Array.from({ length: 6 }).map((_, index) => (
                   <div
                     key={index}
-                    className="skills__item shimmer bg-gray-300 h-16 w-16 rounded animate-pulse"
+                    className="skills__item shimmer bg-gray-100 h-6 w-6 rounded-full animate-pulse"
                   ></div>
                 ))
               : data &&
                 data?.data?.skills?.map((skill, index) => (
                   <div
                     key={index}
-                    // className={`skills__item ${
-                    //   skill.alt === "Next.js" || skill.alt === "Prisma"
-                    //     ? "bg-white p-[2px] rounded-sm"
-                    //     : ""
-                    // }`}
-                    className="skills__item"
+                    className={`skills__item ${
+                      skill.name === "Nextjs" || skill.name === "Prisma"
+                        ? "bg-white p-[2px] rounded-sm"
+                        : ""
+                    }`}
+                    // className="skills__item"
                   >
                     <Image
                       src={skill.logo}

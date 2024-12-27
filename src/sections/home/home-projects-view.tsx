@@ -3,6 +3,7 @@
 import { getSkillImage } from "@/constants";
 import { useGetAllProjectsQuery } from "@/redux/reducers/project/projectApi";
 import { RiLink } from "@remixicon/react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -89,16 +90,22 @@ const HomeProjectsView = () => {
                   className="projects__image"
                   target="_blank"
                 >
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="projects__img w-full"
-                  />
+                  <div className="h-48">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      className="projects__img w-full h-full"
+                      height={500}
+                      width={500}
+                    />
+                  </div>
                 </Link>
 
                 <div className="projects__data">
                   <h3 className="projects__name">{project.title}</h3>
-                  <p className="projects__description">{project.description}</p>
+                  <p className="projects__description line-clamp-3 overflow-ellipsis">
+                    {project.description}
+                  </p>
 
                   {/* <div className="projects__skills">
                     {project.technologies.map((skill, idx) => (
@@ -112,14 +119,19 @@ const HomeProjectsView = () => {
                   </div> */}
 
                   <div className="projects__skills">
-                    {project.technologies.map((tech, idx) => (
-                      <img
-                        key={idx}
-                        src={getSkillImage(tech)}
-                        alt={tech}
-                        className="projects__skill"
-                      />
-                    ))}
+                    {project.technologies.map((tech, idx) => {
+                      const imgData = getSkillImage(tech);
+                      return (
+                        <Image
+                          key={idx}
+                          src={imgData}
+                          alt={tech}
+                          className="projects__skill"
+                          height={500}
+                          width={500}
+                        />
+                      );
+                    })}
                   </div>
 
                   <Link
@@ -127,7 +139,7 @@ const HomeProjectsView = () => {
                     className="projects__button"
                   >
                     <RiLink />
-                    <span>Visit Project</span>
+                    <span>View Details</span>
                   </Link>
                 </div>
               </article>

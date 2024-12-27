@@ -2,7 +2,6 @@ import "./globals.css";
 import { Montserrat_Alternates, Grechen_Fuemen } from "next/font/google";
 import { ReduxProvider } from "@/redux/ReduxProvider";
 import { Metadata } from "next";
-import MainLayout from "@/layouts";
 
 const montserrat_alternates = Montserrat_Alternates({
   weight: ["400", "700", "500", "600"],
@@ -32,9 +31,7 @@ export default function RootLayout({
       className={`${montserrat_alternates.className} ${grechen_fuemen.className}`}
     >
       <body>
-        <ReduxProvider>
-          <MainLayout>{children}</MainLayout>
-        </ReduxProvider>
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );

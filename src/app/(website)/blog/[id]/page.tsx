@@ -9,7 +9,7 @@ interface ICategoryProps {
 
 const Page = ({ params }: ICategoryProps) => {
   const { id } = params;
-  return <div></div>;
+  return <div>this is blog dynamic page wiht id {id} </div>;
 };
 
 export default Page;

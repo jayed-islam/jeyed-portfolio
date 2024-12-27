@@ -13,18 +13,18 @@ import {
 
 import ts from "../../public/assets/img/typescript.svg";
 // import js from "../../public/assets/img/skills-javascript.svg";
-// import html from "../../public/assets/img/skills-html.svg";
-// import css from "../../public/assets/img/skills-css.svg";
+import html from "../../public/assets/img/skills-html.svg";
+import css from "../../public/assets/img/skills-css.svg";
 import git from "../../public/assets/img/skills-git.svg";
-// import github from "../../public/assets/img/skills-github.svg";
+import github from "../../public/assets/img/skills-github.svg";
 // import photoshop from "../../public/assets/img/skills-photoshop.svg";
 import react from "../../public/assets/img/skills-react.svg";
 import tailwind from "../../public/assets/img/skills-tailwind-css.svg";
 import flutter from "../../public/assets/img/flutter.svg";
 import mui from "../../public/assets/img/material-ui-1.svg";
 import mongodb from "../../public/assets/img/mongodb-icon-1-1.svg";
-import nextjs from "../../public/assets/img/next-js.svg";
-// import nodejs from "../../public/assets/img/nodejs-1.svg";
+import nextjs from "../../public/assets/img/nextjs-13.svg";
+import nodejs from "../../public/assets/img/nodejs-1.svg";
 import prisma from "../../public/assets/img/prisma-3.svg";
 import redux from "../../public/assets/img/redux.svg";
 
@@ -51,11 +51,27 @@ export const skills = [
   //   { src: github, alt: "GitHub" },
 ];
 
+export const skillsMatcher = [
+  { src: ts, alt: "TypeScript" },
+  { src: react, alt: "React" },
+  { src: git, alt: "Nextjs" },
+  { src: tailwind, alt: "Tailwind CSS" },
+  { src: mui, alt: "Material-UI" },
+  { src: flutter, alt: "Flutter" },
+  { src: redux, alt: "Redux" },
+  { src: mongodb, alt: "Mongoose" },
+  { src: prisma, alt: "Prisma" },
+  { src: git, alt: "Git" },
+  { src: nodejs, alt: "Nodejs" },
+  { src: github, alt: "GitHub" },
+  { src: html, alt: "HTML" },
+  { src: css, alt: "CSS" },
+];
 export const getSkillImage = (techName: string): string => {
-  const skill = skills.find(
+  const skill = skillsMatcher.find(
     (s) => s.alt.toLowerCase() === techName.toLowerCase()
   );
-  return skill ? skill.src : ts.src; // Fallback image
+  return skill ? skill.src : ts.src;
 };
 
 export const services = [
