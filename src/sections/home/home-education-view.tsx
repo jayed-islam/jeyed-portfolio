@@ -2,16 +2,16 @@ import React from "react";
 
 const educationData = [
   {
-    degree: "Bachelor of Science in Computer Science",
-    institution: "ABC University",
-    year: "2018 - 2022",
-    description: "Graduated with honors, specializing in software development.",
+    degree: "Bachelor of Arts in Islamic Studies And Daowah",
+    institution: "Islamic Arabic University",
+    year: "2019 - 2021",
+    description: "Graduated with Fazil, specializing in Islamic Daowah.",
   },
   {
-    degree: "High School Diploma",
-    institution: "XYZ High School",
+    degree: "High School Certificate (Alim/HSC)",
+    institution: "Madrasah",
     year: "2016 - 2018",
-    description: "Focused on mathematics, physics, and computer science.",
+    description: "Focused on general, and islamic education.",
   },
 ];
 
