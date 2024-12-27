@@ -10,8 +10,8 @@ export interface IProject {
   image: string;
   category: string;
   status: string;
-  startDate: Date;
-  endDate: Date;
+  startDate: string;
+  endDate: string;
   isPublished: boolean;
 }
 

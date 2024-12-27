@@ -62,8 +62,7 @@ const HomeProjectsView = () => {
       </div> */}
       <div className="projects__container container grid">
         {isFetching
-          ? // Shimmer placeholders
-            shimmerArray.map((_, index) => (
+          ? shimmerArray.map((_, index) => (
               <article
                 key={index}
                 className="projects__card animate-pulse border border-gray-300 rounded-lg shadow-md"
@@ -135,7 +134,7 @@ const HomeProjectsView = () => {
                   </div>
 
                   <Link
-                    href={project.liveUrl || ""}
+                    href={`/project/${project._id}`}
                     className="projects__button"
                   >
                     <RiLink />

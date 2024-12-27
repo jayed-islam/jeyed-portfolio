@@ -12,7 +12,7 @@ const HomeBlogView = () => {
 
   const shimmerArray = Array.from({ length: 3 });
   return (
-    <section className="projects section" id="projects">
+    <section className="projects section" id="blogs">
       <h2 className="section__title">BLOGS</h2>
 
       <div className="projects__container container grid">

@@ -9,9 +9,12 @@ import {
   RiHonourLine,
   RiSendPlaneLine,
 } from "@remixicon/react";
+import { usePathname } from "next/navigation";
 
 const NavSection: React.FC = () => {
   const sectionsRef = useRef<NodeListOf<HTMLElement> | null>(null);
+
+  const pathname = usePathname();
 
   const scrollActive = useCallback(() => {
     const scrollDown = window?.scrollY;
@@ -45,35 +48,47 @@ const NavSection: React.FC = () => {
     };
   }, [scrollActive]);
 
+  const isHomePage = pathname === "/";
+
   return (
     <nav className="nav" aria-label="Primary navigation">
-      <ul className="nav__list">
-        <li>
-          <Link href="#home" className="nav__link active-link" title="Home">
-            <RiHomeLine />
-          </Link>
-        </li>
-        <li>
-          <Link href="#projects" className="nav__link" title="Projects">
-            <RiFolderLine />
-          </Link>
-        </li>
-        <li>
-          <Link href="#services" className="nav__link" title="Services">
-            <RiFileEditLine />
-          </Link>
-        </li>
-        <li>
-          <Link href="#experience" className="nav__link" title="Experience">
-            <RiHonourLine />
-          </Link>
-        </li>
-        <li>
-          <Link href="#contact" className="nav__link" title="Contact">
-            <RiSendPlaneLine />
-          </Link>
-        </li>
-      </ul>
+      {isHomePage ? (
+        <ul className="nav__list">
+          <li>
+            <Link href="#home" className="nav__link active-link" title="Home">
+              <RiHomeLine />
+            </Link>
+          </li>
+          <li>
+            <Link href="#projects" className="nav__link" title="Projects">
+              <RiFolderLine />
+            </Link>
+          </li>
+          <li>
+            <Link href="#services" className="nav__link" title="Services">
+              <RiFileEditLine />
+            </Link>
+          </li>
+          <li>
+            <Link href="#experience" className="nav__link" title="Experience">
+              <RiHonourLine />
+            </Link>
+          </li>
+          <li>
+            <Link href="#contact" className="nav__link" title="Contact">
+              <RiSendPlaneLine />
+            </Link>
+          </li>
+        </ul>
+      ) : (
+        <ul className="nav__list">
+          <li>
+            <a href="/" className="nav__link active-home-link" title="Home">
+              <RiHomeLine />
+            </a>
+          </li>
+        </ul>
+      )}
     </nav>
   );
 };

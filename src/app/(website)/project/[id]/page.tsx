@@ -1,4 +1,4 @@
-import BlogDetailsView from "@/sections/blog/blog-details-view";
+import ProjectDetailsView from "@/sections/project/project-details-view";
 import React from "react";
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 
 const Page = ({ params }: Props) => {
   const { id } = params;
-  return <BlogDetailsView id={id} />;
+  return <ProjectDetailsView id={id} />;
 };
 
 export default Page;

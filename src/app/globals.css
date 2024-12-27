@@ -193,6 +193,10 @@ img {
   background-color: var(--first-color);
 }
 
+.active-home-link {
+  background-color: var(--first-color);
+}
+
 /*=============== HOME ===============*/
 /*===== PERFIL =====*/
 .profile {
